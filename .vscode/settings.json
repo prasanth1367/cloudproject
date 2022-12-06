@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b9ce401a-b4f8-42bc-be76-68c9258644bb/appservices/subscriptions/b9ce401a-b4f8-42bc-be76-68c9258644bb/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/TheNewBookClub",
+    "appService.deploySubpath": "."
+}

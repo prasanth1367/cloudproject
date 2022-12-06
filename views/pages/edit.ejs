@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Novel</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/novels/<%=novel._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="novel[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="novel[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Choose image and chapters...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-success">Edit Novel</button>
+            </div>
+        </form>
+        <a href="/novels">All Novels</a>
+    </div>
+</div>

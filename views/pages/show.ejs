@@ -1,0 +1,36 @@
+<% layout("layouts/boilerplate")%>
+
+<div class="row mb-5">
+    <div class="col-3">
+        <div class="card mb-3">
+            <div class="card-body">
+                <img src="<%=imageurl%>" class="img-fluid img-thumbnail" alt="novel image">
+                <h5 class="card-title"><%= novel.title%></h5>
+                <p class="card-text"><%= novel.description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item">Submitted by <%= novel.author.username%></li>
+                
+            </ul>
+           <% if(currentUser && novel.author.equals(currentUser._id)){%>
+            <div class="card-body">
+                <a class="card-link btn btn-info" href="/novels/<%=novel._id%>/edit">Edit</a>
+                <form class="d-inline" action="/novels/<%=novel._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <%}%>
+            <div class="card-footer text-muted">
+    
+            </div>
+        </div>
+
+    </div>
+    <div class="col-9">
+
+ <iframe src="<%=pdfurl%>" class="resposive-iframe" width="1000vh" height="650vh" style="border:none;" ></iframe>
+        
+    </div>
+</div>
+

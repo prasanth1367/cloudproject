@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center text-light">New Novel</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/novels" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label text-light" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="novel[title]" required>
+                <div class="valid-feedback text-light">
+                    Looks good!
+                </div>
+            </div>
+            
+            
+            <div class="mb-3">
+                <label class="form-label text-light" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="novel[description]"
+                    required></textarea>
+                <div class="valid-feedback text-light">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label text-light">Choose image and chapters...</span>
+                        <span class="form-file-button text-light">Browse</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-success">Add Novel</button>
+            </div>
+        </form>
+        <a href="/novels"></a><button class="btn btn-secondary"> All Campgrounds</button></a>
+    </div>
+</div>

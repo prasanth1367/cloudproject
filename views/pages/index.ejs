@@ -1,0 +1,38 @@
+<% layout("layouts/boilerplate")%>
+
+    <div class="container">
+      <h1 class="text-light">All Novels</h1>
+      
+      <% for (let novel of novels){%>
+      <div class="card mb-3 bg-dark">
+          <div class="row">
+              <div class="col-md-3">
+                  <%if(novel.images.length) {%>
+                    <%let imageurl = '';%>
+                   <% for (let i of novel.images){%>
+                    <%        if(i.mimetype!== 'application/pdf')%>    
+                        <%{%>
+                            <%imageurl = i.url.replace('/upload', '/upload/w_200');%>
+                        <%}%>
+                        <%}%>
+                  <img class="img-fluid img-thumbnail rounded px-5" alt="" src="<%=imageurl%>">
+                  <% }else {%>
+                  <img class="img-fluid rounded" alt="" src="https://media.istockphoto.com/id/1209683444/photo/many-hardbound-books-background-selective-focus.jpg?s=612x612&w=0&k=20&c=KQUx5YOmbVrcsCOLVoW8-zOs9b3yhnw5FCeadUVQtjw="">
+                  <% } %>
+              </div>
+              <div class="col-9 md-5">
+                  <div class="card-body">
+                      <h5 class="card-title text-light"><%= novel.title %> </h5>
+  
+                      <p class="card-text text-light"><%= novel.description %></p>
+                      <p class="card-text text-light"> uploaded by <%= novel.author.username %></p>
+                      <a class="btn btn-primary" href="/novels/<%=novel._id%>">View <%=novel.title%></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <% }%>
+  </div>
+
+
+
